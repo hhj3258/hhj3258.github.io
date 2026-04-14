@@ -363,6 +363,12 @@ a { text-decoration: none; color: inherit; }
   color: var(--text);
   margin-bottom: 0.5rem;
 }
+.r-proj-genre {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--dimmed);
+  margin-left: 0.4rem;
+}
 .r-proj-pills {
   display: flex; flex-wrap: wrap; gap: 0.3rem;
   margin-bottom: 0.55rem;
@@ -431,10 +437,11 @@ a { text-decoration: none; color: inherit; }
 .r-skill-pills { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 
 /* Skills & Projects 섹션 pill 아웃라인 스타일 */
+/* 카테고리: 언어=purple, 엔진=yellow, DevOps=blue, 라이브러리=pink, 네트워크=green, AI=sky */
 #skills .pill { font-size: 0.74rem; padding: 0.2rem 0.7rem; }
 #skills .r-skill-head { font-size: 0.7rem; }
 #skills .pill-purple,
-#projects .pill-purple { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+#projects .pill-purple { background: transparent; color: #7C3AED; border: 1.5px solid #7C3AED; }
 #skills .pill-yellow,
 #projects .pill-yellow { background: transparent; color: var(--yellow); border: 1.5px solid var(--yellow); }
 #skills .pill-green,
@@ -443,6 +450,8 @@ a { text-decoration: none; color: inherit; }
 #projects .pill-pink   { background: transparent; color: var(--pink); border: 1.5px solid var(--pink); }
 #skills .pill-blue,
 #projects .pill-blue   { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+#skills .pill-sky,
+#projects .pill-sky    { background: transparent; color: #0891B2; border: 1.5px solid #0891B2; }
 
 /* ===================================================
    EDUCATION
@@ -504,6 +513,42 @@ a { text-decoration: none; color: inherit; }
 .r-military-icon { font-size: 1.2rem; flex-shrink: 0; }
 .r-military-title { font-size: 0.84rem; font-weight: 700; color: var(--text); }
 .r-military-date  { font-size: 0.73rem; color: var(--muted); margin-top: 0.1rem; }
+
+/* ===================================================
+   GAMES
+=================================================== */
+.r-game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.r-game-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.r-game-card:hover { background: var(--accent-07); }
+.r-game-name { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text); }
+.r-game-genre { display: block; font-size: 0.63rem; color: var(--dimmed); margin: 0.1rem 0 0; }
+.r-game-time { display: block; font-size: 0.7rem; font-weight: 600; color: var(--accent); margin-top: 0.1rem; }
+
+.r-variant-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 1.5rem 0 0.6rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--accent-07);
+  border-radius: var(--r-sm);
+  display: inline-block;
+  grid-column: 1 / -1;
+}
 
 /* ===================================================
    PILLS (shared)
