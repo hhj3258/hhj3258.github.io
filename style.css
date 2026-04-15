@@ -9,7 +9,7 @@ html { font-size: 110%; }
 
 /* ===== VARIABLES ===== */
 :root {
-  --page-bg:   #EEF2F8;
+  --page-bg:   #D6DEE8;
   --white:     #FFFFFF;
   --card-bg:   #F7F9FC;
 
@@ -64,6 +64,42 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===================================================
+   TOOLBAR
+=================================================== */
+/* ── Floating Navigation ── */
+.floating-nav {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 200;
+  display: flex;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 100px;
+  padding: 4px;
+  gap: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.08);
+}
+.fnav-tab {
+  color: rgba(255,255,255,.55);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  line-height: 1;
+  text-decoration: none;
+  padding: 6px 18px;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+.fnav-tab:hover { color: rgba(255,255,255,.85); }
+.fnav-tab.active {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(37,99,235,.4);
+}
+
+/* ===================================================
    PAGE WRAPPER
 =================================================== */
 .resume-page {
@@ -73,7 +109,7 @@ a { text-decoration: none; color: inherit; }
   max-width: 1120px;
   margin: 2rem auto;
   border-radius: var(--r-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15), 0 20px 60px rgba(0,0,0,.25);
 }
 
 /* ===================================================
@@ -597,6 +633,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media print {
+  .floating-nav     { display: none !important; }
   .resume-page      { margin: 0; border-radius: 0; }
   .header           { border-radius: 0; }
   .r-main           { border-radius: 0; }

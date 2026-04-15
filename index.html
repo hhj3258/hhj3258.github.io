@@ -4,16 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>홍현준 | Client Programmer</title>
-  <link rel="stylesheet" href="style.css?v=45" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="style.css?v=46" />
 </head>
 <body>
+
+<!-- ── 플로팅 네비게이션 ── -->
+<nav class="floating-nav">
+  <a href="index.html" class="fnav-tab active">이력서</a>
+  <a href="portfolio.html" class="fnav-tab">포트폴리오</a>
+</nav>
+
 <div class="resume-page">
 
   <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="header-left">
       <div class="sb-avatar">
-        <img src="../assets/이력서사진1.jpg" alt="홍현준" />
+        <img src="assets/이력서사진1.jpg" alt="홍현준" />
       </div>
       <div class="header-name-group">
         <h1 class="sb-name">홍현준</h1>
@@ -60,7 +68,7 @@
       <div class="r-exp-list">
 
         <div class="r-card r-exp-row r-exp-current">
-          <div class="r-exp-logo r-logo-wn"><img src="../assets/wemadenext_icon.png" alt="위메이드넥스트" /></div>
+          <div class="r-exp-logo r-logo-wn"><img src="assets/wemadenext_icon.png" alt="위메이드넥스트" /></div>
           <div class="r-exp-body">
             <div class="r-exp-top">
               <div>
@@ -86,7 +94,7 @@
         </div>
 
         <div class="r-card r-exp-row">
-          <div class="r-exp-logo r-logo-pp"><img src="../assets/piedpixels_icon.png" alt="파이드픽셀즈" /></div>
+          <div class="r-exp-logo r-logo-pp"><img src="assets/piedpixels_icon.png" alt="파이드픽셀즈" /></div>
           <div class="r-exp-body">
             <div class="r-exp-top">
               <div>
@@ -173,8 +181,10 @@
           </ul>
           <div class="r-proj-links">
             <a href="https://game.kakao.com/games/ZQwaJd08" target="_blank" class="r-proj-link">🔗 카카오 소개</a>
-            <a href="https://url.kr/uc31kq" target="_blank" class="r-proj-link">🔗 플레이스토어</a>
-            <a href="https://url.kr/2rjxig" target="_blank" class="r-proj-link">🔗 앱스토어</a>
+            <a href="https://play.google.com/store/apps/details?id=com.piedpixels.gransagaidle" target="_blank" class="r-proj-link">🔗 플레이스토어</a>
+            <a href="https://apps.apple.com/kr/app/%EA%B7%B8%EB%9E%91%EC%82%AC%EA%B0%80-%ED%82%A4%EC%9A%B0%EA%B8%B0-knightsxknights/id6482985104" target="_blank" class="r-proj-link">🔗 앱스토어</a>
+            <a href="https://www.youtube.com/shorts/5-XhJDr5X1s" target="_blank" class="r-proj-link">🔗 영상1</a>
+            <a href="https://www.youtube.com/shorts/ntyjeLKI0Uo" target="_blank" class="r-proj-link">🔗 영상2</a>
           </div>
         </div>
 
@@ -235,28 +245,6 @@
         <div class="r-card r-proj-card">
           <div class="r-proj-header">
             <span class="r-proj-badge r-badge-personal">개인 프로젝트</span>
-            <span class="r-proj-date-sm">2026.03</span>
-          </div>
-          <h3 class="r-proj-title">HoyoLab Auto Check-in <span class="r-proj-genre">호요버스 출석체크 자동화</span></h3>
-          <div class="r-proj-pills">
-            <span class="pill pill-purple pill-sm">Python</span>
-            <span class="pill pill-purple pill-sm">Playwright</span>
-            <span class="pill pill-sky pill-sm">Claude Code</span>
-          </div>
-          <ul class="r-proj-pts">
-            <li>바이브코딩 프로젝트</li>
-            <li>호요버스 5개 게임 일일 출석체크 완전 자동화</li>
-            <li>Playwright MCP 기반 헤드리스 브라우저 자동화, 다국어 지원 (ko/en/ja)</li>
-            <li>Windows Task Scheduler 연동 자동화</li>
-          </ul>
-          <div class="r-proj-links">
-            <a href="https://github.com/hhj3258/hoyolab-auto-check-in" target="_blank" class="r-proj-link">🔗 GitHub</a>
-          </div>
-        </div>
-
-        <div class="r-card r-proj-card">
-          <div class="r-proj-header">
-            <span class="r-proj-badge r-badge-personal">개인 프로젝트</span>
             <span class="r-proj-date-sm">2026.03 ~ 현재</span>
           </div>
           <h3 class="r-proj-title">AI MiniGame Arcade <span class="r-proj-genre">모바일 · 미니게임</span></h3>
@@ -278,6 +266,29 @@
             <a href="https://github.com/hhj3258/AI-Minigame-Arcade" target="_blank" class="r-proj-link">🔗 GitHub</a>
           </div>
         </div>
+
+        <div class="r-card r-proj-card">
+          <div class="r-proj-header">
+            <span class="r-proj-badge r-badge-personal">개인 프로젝트</span>
+            <span class="r-proj-date-sm">2026.03</span>
+          </div>
+          <h3 class="r-proj-title">HoyoLab Auto Check-in <span class="r-proj-genre">호요버스 웹 출석체크 자동화</span></h3>
+          <div class="r-proj-pills">
+            <span class="pill pill-purple pill-sm">Python</span>
+            <span class="pill pill-purple pill-sm">Playwright</span>
+            <span class="pill pill-sky pill-sm">Claude Code</span>
+          </div>
+          <ul class="r-proj-pts">
+            <li>바이브코딩 프로젝트</li>
+            <li>호요버스 5개 게임 일일 출석체크 완전 자동화</li>
+            <li>Playwright MCP 기반 헤드리스 브라우저 자동화, 다국어 지원 (ko/en/ja)</li>
+            <li>Windows Task Scheduler 연동 자동화</li>
+          </ul>
+          <div class="r-proj-links">
+            <a href="https://github.com/hhj3258/hoyolab-auto-check-in" target="_blank" class="r-proj-link">🔗 GitHub</a>
+          </div>
+        </div>
+
 
       </div>
     </section>
@@ -357,13 +368,13 @@
 
       <div class="r-edu-grid">
         <div class="r-edu-card">
-          <div class="r-edu-logo"><img src="../assets/hallym_icon.png" alt="한림대학교" /></div>
+          <div class="r-edu-logo"><img src="assets/hallym_icon.png" alt="한림대학교" /></div>
           <p class="r-edu-name">한림대학교</p>
           <p class="r-edu-major">콘텐츠IT학과</p>
           <p class="r-edu-date">2016.03 ~ 2022.02</p>
         </div>
         <div class="r-edu-card">
-          <div class="r-edu-logo"><img src="../assets/hallym_icon.png" alt="한림대학교" /></div>
+          <div class="r-edu-logo"><img src="assets/hallym_icon.png" alt="한림대학교" /></div>
           <p class="r-edu-name">한림대학교</p>
           <p class="r-edu-major">디스플레이학과</p>
           <p class="r-edu-major"><span class="r-edu-badge">복수전공</span></p>
