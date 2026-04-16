@@ -787,6 +787,22 @@ body {
 .pill-green  { color: #059669; border-color: #059669; }
 .pill-sky    { color: #0891B2; border-color: #0891B2; }
 
+/* ── Responsive ── */
+@media (max-width: 1400px) {
+  .slide { zoom: 1; }
+}
+@media (max-width: 1122px) {
+  .slide { zoom: 0.8; }
+}
+@media (max-width: 900px) {
+  .slide { zoom: 0.6; }
+}
+@media (max-width: 600px) {
+  .slide { zoom: 0.33; }
+  .slides-wrap { padding: 40px 0; gap: 12px; }
+  .floating-nav { top: 8px; left: 8px; }
+}
+
 /* ── Print ── */
 @media print {
   .floating-nav { display: none !important; }

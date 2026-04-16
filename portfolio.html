@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>홍현준 — 포트폴리오</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="style-portfolio.css?v=1" />
+  <link rel="stylesheet" href="style-portfolio.css?v=2" />
 </head>
 <body>
 
@@ -146,9 +146,9 @@
         <div class="proj-detail-col">
           <span class="detail-section-title">캐릭터 커스터마이징 툴</span>
           <ul class="detail-pts">
-            <li>본 구조가 다른 종족(Human, SD)별 파츠(헤어, 상체, 하체, 무기, 장신구 등) 교체 시스템을 하나의 파이프라인으로 구현</li>
+            <li>종족마다 본 구조가 달라 파츠 교체 로직이 분산되는 문제를 파츠 테이블에 본타입 enum 컬럼을 두어 매핑하고, 하나의 파이프라인에서 통합 처리하도록 설계</li>
             <li>모션 프리뷰, 썸네일 촬영, 캐릭터 저장/로드(MessagePack 바이너리 직렬화) 기능 구현</li>
-            <li>데이터 주도 설계로 종족/파츠 추가 시 프로그래머 수정 없이 인스펙터 및 엑셀로 확장 가능한 구조 구축</li>
+            <li>종족·파츠 추가 시 프로그래머가 코드를 수정해야 하는 병목을 해소하기 위해 데이터 주도 설계를 적용, 인스펙터 및 엑셀만으로 확장 가능한 구조 구축</li>
             <li>종족 및 파츠별 리소스 폴더 구조와 파일명 규칙을 문서화하여 리소스 관리 표준화</li>
           </ul>
 
@@ -160,7 +160,7 @@
                 <li>Lattice: 격자 제어점으로 메시 형태를 변형하는 도구</li>
               </ul>
             </li>
-            <li>블렌드셰이프를 보존하면서 다중 SkinnedMesh를 하나로 병합하는 저수준 병합 로직 구현</li>
+            <li>Unity 기본 Mesh Combine이 Lattice 변형 정보를 유지하지 못하는 문제를 해결하기 위해 메시 병합 시 Lattice 정보를 보존하는 저수준 병합 로직 직접 구현</li>
           </ul>
 
           <span class="detail-section-title">모바일 렌더링 최적화 R&D</span>
@@ -176,8 +176,8 @@
         <div class="proj-detail-col">
           <span class="detail-section-title">전투 시스템 아키텍처</span>
           <ul class="detail-pts">
-            <li>동일한 캐릭터 리소스를 Animator Controller 교체만으로 FPS(상·하체 레이어 분리)와 RPG(전신 단일 레이어) 등 다양한 장르에서 사용할 수 있는 범용 Animator 구조 설계</li>
-            <li>캐릭터 FSM — 비트마스크를 활용하여 이동 중 공격 등 복합 상태 관리, 콤보 시스템 구현</li>
+            <li>UGC 특성상 하나의 캐릭터가 FPS·RPG 등 여러 장르에서 사용되어야 하므로, Animator Controller 교체만으로 상·하체 분리(FPS)와 전신 단일(RPG) 모두 대응하는 범용 구조 설계</li>
+            <li>이동 중 공격, 점프 중 재장전 등 복합 상태가 필요한 상황에 대응하기 위해 비트마스크 FSM으로 여러 상태를 단일 값으로 관리</li>
             <li>WeaponBase를 추상 베이스로, GunWeapon은 재장전, SwordWeapon은 콤보를 각각 확장하는 상속 구조 설계</li>
             <li>공격 판정 로직을 근·원거리로 이원화
               <ul class="detail-sub">
@@ -308,7 +308,7 @@
           <span class="detail-section-title">렌더링 최적화</span>
           <ul class="detail-pts">
             <li>모바일 환경 30fps → 60fps 달성 (엔진셀 프로그래머와 협업)</li>
-            <li>프로파일링으로 병목 분석 → 드로우콜 축소, 오브젝트 풀링, 파티클 최적화 적용</li>
+            <li>프로파일링으로 병목을 분석하여 드로우콜 축소, 오브젝트 풀링, 파티클 최적화 적용</li>
             <li>대량 오브젝트 렌더링을 프레임별로 일정 개수씩 분산 처리하여 순간 프레임 드랍 억제</li>
             <li>프레임 제한·해상도·버프/데미지/재화/스킬 이펙트 On/Off 등 그래픽 옵션 팝업 제작</li>
           </ul>
