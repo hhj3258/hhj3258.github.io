@@ -107,7 +107,7 @@ a { text-decoration: none; color: inherit; }
   flex-direction: column;
   min-height: 100vh;
   max-width: 1120px;
-  margin: 2rem auto;
+  margin: 3.5rem auto 2rem;
   border-radius: var(--r-lg);
   box-shadow: 0 4px 12px rgba(0,0,0,.15), 0 20px 60px rgba(0,0,0,.25);
 }
@@ -621,7 +621,7 @@ a { text-decoration: none; color: inherit; }
    RESPONSIVE
 =================================================== */
 @media (max-width: 860px) {
-  .resume-page { margin: 0; border-radius: 0; }
+  .resume-page { margin: 0; border-radius: 0; padding-top: 52px; }
   .header { flex-direction: column; align-items: flex-start; gap: 1rem; border-radius: 0; padding: 1.2rem 1.5rem; }
   .r-main { padding: 1.5rem; border-radius: 0; }
   .r-proj-grid { grid-template-columns: 1fr; }
@@ -629,7 +629,8 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 540px) {
   .r-exp-top { flex-direction: column; gap: 0.4rem; }
-  .r-exp-meta { text-align: left; }
+  .r-exp-meta { text-align: left; position: static; }
+  .r-exp-loc { justify-content: flex-start; }
 }
 
 @media print {
