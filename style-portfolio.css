@@ -813,7 +813,9 @@ body {
     gap: 0;
     background: white;
     display: block;
+    overflow: hidden;
   }
+  script { display: none !important; }
   .slide {
     box-shadow: none;
     border-radius: 0;
