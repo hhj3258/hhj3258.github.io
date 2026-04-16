@@ -18,11 +18,14 @@
 
 html {
   font-size: 112%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   background: #D6DEE8;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ── Floating Navigation ── */
@@ -60,12 +63,10 @@ body {
 /* ── Fade-in Animation ── */
 .slide {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 .slide.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* ── Slides container ── */
@@ -81,7 +82,9 @@ body {
 .slide {
   width: 297mm;
   height: 210mm;
-  zoom: 1.25;
+  transform: scale(1.25);
+  transform-origin: top center;
+  margin-bottom: 52.5mm;
   background: white;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,.2), 0 12px 40px rgba(0,0,0,.18);
@@ -789,16 +792,16 @@ body {
 
 /* ── Responsive ── */
 @media (max-width: 1400px) {
-  .slide { zoom: 1; }
+  .slide { transform: scale(1); margin-bottom: 0; }
 }
 @media (max-width: 1122px) {
-  .slide { zoom: 0.8; }
+  .slide { transform: scale(0.8); margin-bottom: -42mm; }
 }
 @media (max-width: 900px) {
-  .slide { zoom: 0.6; }
+  .slide { transform: scale(0.6); margin-bottom: -84mm; }
 }
 @media (max-width: 600px) {
-  .slide { zoom: 0.33; }
+  .slide { transform: scale(0.33); margin-bottom: -141mm; }
   .slides-wrap { padding: 40px 0; gap: 12px; }
   .floating-nav { top: 8px; left: 8px; }
 }
@@ -823,7 +826,6 @@ body {
     break-after: page;
     width: 297mm !important;
     height: 210mm !important;
-    zoom: 1 !important;
     transform: none !important;
     margin-bottom: 0 !important;
   }
