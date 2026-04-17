@@ -634,8 +634,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media print {
+  @page { margin: 10mm; }
+  html, body        { background: white !important; }
   .floating-nav     { display: none !important; }
-  .resume-page      { margin: 0; border-radius: 0; }
+  .resume-page      { margin: 0; border-radius: 0; box-shadow: none; min-height: 0; }
   .header           { border-radius: 0; }
   .r-main           { border-radius: 0; }
 
