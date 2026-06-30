@@ -77,18 +77,18 @@ a { text-decoration: none; color: inherit; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 100px;
-  padding: 4px;
-  gap: 2px;
+  padding: 4.4px;
+  gap: 2.2px;
   box-shadow: 0 4px 20px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.08);
 }
 .fnav-tab {
   color: rgba(255,255,255,.55);
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 600;
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   line-height: 1;
   text-decoration: none;
-  padding: 6px 18px;
+  padding: 6.6px 19.8px;
   border-radius: 100px;
   transition: all 0.2s;
 }
@@ -347,6 +347,86 @@ a { text-decoration: none; color: inherit; }
 }
 .r-exp-bullets li strong { color: var(--text); font-weight: 700; }
 
+/* ===== 분사 통합 카드 (엔픽셀 → 파이드픽셀즈) ===== */
+.r-exp-logo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+.r-exp-logo-arrow {
+  color: var(--accent);
+  display: flex;
+  line-height: 0;
+  opacity: 0.7;
+}
+.r-exp-coarrow { color: var(--dimmed); font-weight: 700; margin: 0 0.1rem; }
+.r-exp-split {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-10);
+  padding: 0.06rem 0.4rem;
+  border-radius: 100px;
+  margin-left: 0.28rem;
+  vertical-align: middle;
+}
+.r-exp-product {
+  font-size: 0.79rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0.1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px dashed var(--border);
+}
+.r-exp-product strong { color: var(--accent); font-weight: 700; }
+
+.r-exp-phases {
+  position: relative;
+  margin-top: 0.6rem;
+  padding-left: 0.95rem;
+}
+/* 두 시기를 잇는 세로 타임라인 */
+.r-exp-phases::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: var(--accent-15);
+  border-radius: 2px;
+}
+.r-exp-phase + .r-exp-phase { margin-top: 0.7rem; }
+.r-exp-phase-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.32rem;
+}
+.r-exp-phase-head::before {
+  content: '';
+  position: absolute;
+  left: calc(-0.95rem + 1px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1.5px var(--accent-15);
+}
+.r-exp-phase-co {
+  font-size: 0.79rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.r-exp-phase-date {
+  font-size: 0.68rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
 /* ===================================================
    PROJECTS
 =================================================== */
@@ -391,16 +471,16 @@ a { text-decoration: none; color: inherit; }
 .r-badge-personal { background: rgba(5,150,105,0.1);  color: var(--green); }
 .r-badge-team     { background: var(--accent-10);  color: var(--accent); }
 
-.r-proj-date-sm { font-size: 0.67rem; color: var(--dimmed); }
+.r-proj-date-sm { font-size: 0.72rem; color: var(--dimmed); }
 
 .r-proj-title {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 0.5rem;
 }
 .r-proj-genre {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--dimmed);
   margin-left: 0.4rem;
@@ -429,7 +509,7 @@ a { text-decoration: none; color: inherit; }
   color: #fff;
 }
 .r-proj-award {
-  font-size: 0.75rem;
+  font-size: 0.79rem;
   font-weight: 600;
   color: var(--yellow);
   margin-bottom: 0.45rem;
@@ -439,7 +519,7 @@ a { text-decoration: none; color: inherit; }
   display: flex; flex-direction: column; gap: 0.22rem;
 }
 .r-proj-pts li {
-  font-size: 0.75rem;
+  font-size: 0.79rem;
   color: var(--muted);
   padding-left: 0.8rem;
   position: relative;
@@ -538,6 +618,7 @@ a { text-decoration: none; color: inherit; }
 .r-award-icon { font-size: 1.2rem; flex-shrink: 0; }
 .r-award-title { font-size: 0.84rem; font-weight: 700; color: var(--text); }
 .r-award-sub   { font-size: 0.73rem; color: var(--muted); }
+.r-award-desc  { font-size: 0.68rem; color: var(--dimmed); margin-top: 0.12rem; }
 
 /* ===================================================
    MILITARY
@@ -572,7 +653,6 @@ a { text-decoration: none; color: inherit; }
 .r-game-card:hover { background: var(--accent-07); }
 .r-game-name { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text); }
 .r-game-genre { display: block; font-size: 0.63rem; color: var(--dimmed); margin: 0.1rem 0 0; }
-.r-game-time { display: block; font-size: 0.7rem; font-weight: 600; color: var(--accent); margin-top: 0.1rem; }
 
 .r-variant-label {
   font-size: 0.85rem;

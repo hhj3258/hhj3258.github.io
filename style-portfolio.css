@@ -39,17 +39,17 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 100px;
-  padding: 4px;
-  gap: 2px;
+  padding: 4.4px;
+  gap: 2.2px;
   box-shadow: 0 4px 20px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.08);
 }
 .fnav-tab {
   color: rgba(255,255,255,.55);
-  font-size: 13px;
+  font-size: 14.3px;
   font-weight: 600;
   line-height: 1;
   text-decoration: none;
-  padding: 6px 18px;
+  padding: 6.6px 19.8px;
   border-radius: 100px;
   transition: all 0.2s;
 }
