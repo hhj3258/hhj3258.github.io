@@ -773,6 +773,112 @@ body {
   letter-spacing: .08em;
 }
 
+/* ════════════════════════════════
+   슈퍼센트 H2 — 팀 AI 개발 체계
+   ════════════════════════════════ */
+/* ── 공통 본문 ── */
+.ai-body {
+  flex: 1;
+  min-height: 0;
+  padding: 1.3rem 2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.ai-head h2 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  color: var(--text);
+}
+.ai-head p {
+  font-size: 0.68rem;
+  color: var(--sub);
+  margin-top: 0.2rem;
+}
+
+/* ── 02 그래프 구조 ── */
+.graph-row { flex: 1; min-height: 0; display: flex; gap: 1.2rem; }
+.graph-fig { width: 61%; flex-shrink: 0; display: flex; align-items: center; }
+.graph-fig svg { width: 100%; height: auto; }
+.graph-side { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0.8rem; min-width: 0; }
+.role-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.role-list li { font-size: 0.68rem; color: var(--sub); line-height: 1.5; display: flex; gap: 0.45rem; }
+.role-list b {
+  flex-shrink: 0; width: 3.6rem;
+  font-size: 0.6rem; font-weight: 800; color: var(--accent);
+  background: var(--accent-lt); border-radius: 4px;
+  text-align: center; padding: 0.05rem 0; height: fit-content;
+}
+.memory-band {
+  border: 1.5px dashed var(--accent-md);
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+  display: flex; align-items: center; gap: 0.8rem;
+  background: #F7F9FF;
+}
+.memory-title { font-size: 0.66rem; font-weight: 800; color: var(--accent); white-space: nowrap; line-height: 1.35; }
+.memory-title span { display: block; font-size: 0.55rem; font-weight: 600; color: var(--dimmed); }
+.memory-files { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.45rem; }
+.mem-file { background: white; border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.5rem; }
+.mem-file code { font-family: 'Consolas', monospace; font-size: 0.62rem; font-weight: 700; color: var(--text); }
+.mem-file p { font-size: 0.55rem; color: var(--sub); line-height: 1.4; margin-top: 0.1rem; }
+
+/* ── 03 문제 → 해결 → 결과 → 배운 점 ── */
+.story-grid {
+  flex: 1; min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr;
+  gap: 0.8rem;
+}
+.story-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  display: flex; flex-direction: column; gap: 0.45rem;
+  min-height: 0;
+}
+.story-tag {
+  font-size: 0.58rem; font-weight: 800; letter-spacing: .08em;
+  padding: 0.12rem 0.55rem; border-radius: 100px; width: fit-content;
+}
+.tag-problem { background: #FEE2E2; color: #B91C1C; }
+.tag-solve   { background: var(--accent-lt); color: var(--accent); }
+.tag-result  { background: #D1FAE5; color: #047857; }
+.tag-learn   { background: rgba(255,255,255,.2); color: white; }
+.story-card h3 { font-size: 0.9rem; font-weight: 800; color: var(--text); letter-spacing: -.02em; }
+.story-card p, .story-card li { font-size: 0.7rem; color: var(--sub); line-height: 1.65; }
+.story-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.story-card li { padding-left: 0.85rem; position: relative; }
+.story-card li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
+.story-card li b { color: var(--text); font-weight: 700; }
+.solve-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 0.7rem; }
+.solve-item { background: #F7F9FF; border: 1px solid #E3EBFB; border-radius: 8px; padding: 0.8rem 0.95rem; display: flex; flex-direction: column; justify-content: center; }
+.solve-item h4 { font-size: 0.78rem; font-weight: 800; color: var(--accent); margin-bottom: 0.25rem; }
+.solve-item p { font-size: 0.7rem; line-height: 1.7; }
+.card-solve { grid-row: 1 / 3; grid-column: 2; }
+.card-learn {
+  flex: 1;
+  background: linear-gradient(145deg, #2563EB 0%, #3B82F6 60%, #60A5FA 100%);
+  border: none;
+  justify-content: center;
+}
+.card-learn p { color: white; font-size: 0.84rem; font-weight: 700; line-height: 1.6; }
+.story-left { display: flex; flex-direction: column; gap: 0.8rem; grid-row: 1 / 3; grid-column: 1; }
+
+/* ── 04 에이전트 스킬 ── */
+.sec-label { font-size: 0.72rem; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 0.4rem; }
+.sec-label::before { content: ''; width: 3px; height: 13px; background: var(--accent); border-radius: 2px; }
+.skill-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 0.8rem; }
+.skill-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.2rem; background: #FBFCFE; display: flex; flex-direction: column; gap: 0.45rem; }
+.skill-no { font-size: 1.5rem; font-weight: 900; color: var(--accent-lt); line-height: 1; letter-spacing: -.02em; }
+.skill-flow { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.25rem; padding-top: 0.7rem; border-top: 1px dashed var(--border); }
+.flow-chip { font-size: 0.6rem; font-weight: 700; color: var(--accent); background: white; border: 1px solid var(--accent-lt); border-radius: 5px; padding: 0.15rem 0.45rem; white-space: nowrap; }
+.flow-arrow { font-size: 0.6rem; color: var(--accent-md); font-weight: 700; }
+.skill-card h4 { font-size: 0.86rem; font-weight: 800; color: var(--accent); }
+.skill-card p { font-size: 0.72rem; color: var(--sub); line-height: 1.7; }
+
 /* ── Pills ── */
 .pill {
   display: inline-flex;

@@ -332,6 +332,7 @@ a { text-decoration: none; color: inherit; }
   gap: 0.28rem;
 }
 .r-exp-bullets li {
+  word-break: keep-all;
   font-size: 0.79rem;
   color: var(--muted);
   padding-left: 0.9rem;
@@ -520,6 +521,7 @@ a { text-decoration: none; color: inherit; }
   display: flex; flex-direction: column; gap: 0.22rem;
 }
 .r-proj-pts li {
+  word-break: keep-all;
   font-size: 0.79rem;
   color: var(--muted);
   padding-left: 0.8rem;

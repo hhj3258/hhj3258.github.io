@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>홍현준 — 포트폴리오</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="style-portfolio.css?v=3" />
+  <link rel="stylesheet" href="style-portfolio.css?v=5" />
 </head>
 <body>
 
@@ -74,7 +74,252 @@
       </table>
     </div>
 
-    <span class="cover-slide-no">01 / 11</span>
+    <span class="cover-slide-no">01 / 14</span>
+  </div>
+
+  <!-- ══════════════════════════════════
+       Slide 2 — 슈퍼센트 H2 (팀 AI 개발 체계 · 그래프 구조)
+       ══════════════════════════════════ -->
+
+  <div class="slide slide-project">
+    <div class="proj-topbar">
+      <span class="proj-topbar-no">02</span>
+      <span class="proj-topbar-company">슈퍼센트 · H2팀</span>
+      <span class="proj-topbar-sep">·</span>
+      <span class="proj-topbar-period">2026.07 ~ 현재 · 잠실</span>
+      <span class="proj-topbar-spacer"></span>
+      <span class="proj-topbar-label">Company Project</span>
+    </div>
+    <div class="ai-body">
+      <div class="ai-head">
+        <h2>역할을 나눈 AI 세션을 그래프로 연결했습니다</h2>
+        <p>AI 세션을 노드, 작업이 넘어가는 경로를 엣지로 보고 흐름을 설계했습니다. 구현을 맡은 세션은 스스로 완료 처리를 할 수 없습니다.</p>
+      </div>
+
+      <div class="graph-row">
+        <div class="graph-fig">
+          <svg viewBox="0 0 620 330" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, sans-serif">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#93C5FD"/></marker>
+              <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#059669"/></marker>
+              <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#DC2626"/></marker>
+              <marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/></marker>
+            </defs>
+
+            <!-- ① 착수 전 검토 (PD → QA) -->
+            <path d="M205 140 C 205 58, 535 58, 535 140" fill="none" stroke="#9CA3AF" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrD)"/>
+            <text x="370" y="76" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="700" paint-order="stroke" stroke="white" stroke-width="5">① 착수 전: QA가 스펙의 수용 기준 먼저 검토</text>
+
+            <!-- ④ PASS (QA → PD) -->
+            <path d="M565 140 C 565 14, 175 14, 175 140" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arrG)"/>
+            <text x="370" y="30" text-anchor="middle" font-size="11" fill="#059669" font-weight="700" paint-order="stroke" stroke="white" stroke-width="5">④ 통과 → PD가 병합·정리</text>
+
+            <!-- 사용자 ↔ PD -->
+            <line x1="96" y1="172" x2="128" y2="172" stroke="#93C5FD" stroke-width="2" marker-start="url(#arr)" marker-end="url(#arr)"/>
+
+            <!-- ② PD → 워커 -->
+            <line x1="250" y1="172" x2="318" y2="108" stroke="#93C5FD" stroke-width="2" marker-end="url(#arr)"/>
+            <line x1="250" y1="172" x2="318" y2="172" stroke="#93C5FD" stroke-width="2" marker-end="url(#arr)"/>
+            <line x1="250" y1="172" x2="318" y2="236" stroke="#93C5FD" stroke-width="2" marker-end="url(#arr)"/>
+            <text x="284" y="266" text-anchor="middle" font-size="10.5" fill="#2563EB" font-weight="700">② 배분</text>
+
+            <!-- ③ 워커 → QA -->
+            <line x1="432" y1="108" x2="488" y2="166" stroke="#93C5FD" stroke-width="2" marker-end="url(#arr)"/>
+            <line x1="432" y1="172" x2="488" y2="172" stroke="#93C5FD" stroke-width="2" marker-end="url(#arr)"/>
+            <line x1="432" y1="236" x2="488" y2="178" stroke="#93C5FD" stroke-width="2" marker-end="url(#arr)"/>
+            <text x="460" y="266" text-anchor="middle" font-size="10.5" fill="#2563EB" font-weight="700">③ 검증 요청</text>
+
+            <!-- FAIL (QA → 워커) -->
+            <path d="M550 204 C 550 312, 376 312, 376 262" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrR)"/>
+            <text x="505" y="322" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="700">실패 → 워커가 바로 수정</text>
+
+            <!-- 노드: 사용자 -->
+            <rect x="10" y="150" width="86" height="44" rx="10" fill="#F1F5F9" stroke="#CBD5E1"/>
+            <text x="53" y="177" text-anchor="middle" font-size="13" font-weight="800" fill="#334155">사용자</text>
+
+            <!-- 노드: PD -->
+            <rect x="130" y="140" width="120" height="64" rx="12" fill="#2563EB"/>
+            <text x="190" y="168" text-anchor="middle" font-size="15" font-weight="900" fill="white">PD</text>
+            <text x="190" y="187" text-anchor="middle" font-size="10.5" fill="#DBEAFE">총괄 · 코드 작성 안 함</text>
+
+            <!-- 노드: 워커 -->
+            <rect x="320" y="86" width="112" height="44" rx="10" fill="white" stroke="#2563EB" stroke-width="1.5"/>
+            <text x="376" y="106" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E1B4B">워커 A</text>
+            <text x="376" y="121" text-anchor="middle" font-size="9.5" fill="#52526E">격리 작업 공간</text>
+            <rect x="320" y="150" width="112" height="44" rx="10" fill="white" stroke="#2563EB" stroke-width="1.5"/>
+            <text x="376" y="170" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E1B4B">워커 B</text>
+            <text x="376" y="185" text-anchor="middle" font-size="9.5" fill="#52526E">격리 작업 공간</text>
+            <rect x="320" y="214" width="112" height="44" rx="10" fill="white" stroke="#2563EB" stroke-width="1.5"/>
+            <text x="376" y="234" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1E1B4B">워커 C</text>
+            <text x="376" y="249" text-anchor="middle" font-size="9.5" fill="#52526E">격리 작업 공간</text>
+
+            <!-- 노드: QA -->
+            <rect x="490" y="140" width="120" height="64" rx="12" fill="#1E1B4B"/>
+            <text x="550" y="168" text-anchor="middle" font-size="15" font-weight="900" fill="white">QA</text>
+            <text x="550" y="187" text-anchor="middle" font-size="10.5" fill="#C7D2FE">구현 안 한 세션 · 실측</text>
+          </svg>
+        </div>
+
+        <div class="graph-side">
+          <span class="detail-section-title">노드별 역할</span>
+          <ul class="role-list">
+            <li><b>사용자</b>요구 사항을 전달하고 결정을 내립니다. PD하고만 대화합니다.</li>
+            <li><b>PD</b>스펙 작성, 작업 배분, 병합을 맡고 코드는 직접 쓰지 않습니다.</li>
+            <li><b>워커</b>각자 격리된 작업 공간에서 구현·커밋하는 독립 AI 세션입니다.</li>
+            <li><b>QA</b>구현에 참여하지 않은 세션입니다. Unity MCP로 게임을 조작해 수치와 스크린샷으로 판정합니다.</li>
+          </ul>
+          <span class="detail-section-title">설계 원칙</span>
+          <ul class="role-list">
+            <li><b>착수 조건</b>스펙과 사전 검토가 없는 작업은 배분 스크립트가 받지 않습니다.</li>
+            <li><b>재작업</b>실패하면 QA가 워커에게 바로 돌려보내고, PD는 이 과정에 끼지 않습니다.</li>
+            <li><b>기록</b>세션 사이에는 짧은 메시지만 주고받고, 자세한 내용과 상태는 파일에 남깁니다.</li>
+            <li><b>병합</b>Unity 에디터는 한 번에 한 세션만 쓸 수 있어 PD가 하나씩 병합합니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="memory-band">
+        <div class="memory-title">공유 메모리 층<span>모두 git에 커밋 · 세션이 바뀌어도 이어짐</span></div>
+        <div class="memory-files">
+          <div class="mem-file"><code>INDEX.md</code><p>전체 스펙 목록과 상태. PD·QA만 수정</p></div>
+          <div class="mem-file"><code>spec.md</code><p>목적, 수용 기준, 설계 결정, 버린 안</p></div>
+          <div class="mem-file"><code>PROGRESS.md</code><p>진행 상태와 다음 할 일</p></div>
+          <div class="mem-file"><code>qa.md</code><p>착수 전 검토와 검증 리포트</p></div>
+        </div>
+      </div>
+    </div>
+    <span class="proj-slide-no">02 / 14</span>
+  </div>
+
+  <!-- ══════════════════════════════════
+       Slide 3 — 슈퍼센트 H2 (문제와 해결)
+       ══════════════════════════════════ -->
+
+  <div class="slide slide-project">
+    <div class="proj-topbar">
+      <span class="proj-topbar-no">03</span>
+      <span class="proj-topbar-company">슈퍼센트 · H2팀</span>
+      <span class="proj-topbar-sep">·</span>
+      <span class="proj-topbar-period">팀 AI 개발 체계 — 문제와 해결</span>
+      <span class="proj-topbar-spacer"></span>
+      <span class="proj-topbar-label">Company Project</span>
+    </div>
+    <div class="ai-body">
+      <div class="ai-head">
+        <h2>구현한 AI가 스스로 검증하지 않도록 바꾼 과정</h2>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-card">
+            <span class="story-tag tag-problem">PROBLEM</span>
+            <h3>AI의 자기 검증을 믿을 수 없었습니다</h3>
+            <p>AI 코딩 에이전트에 구현을 맡기니 속도는 빨라졌지만, 같은 세션이 구현과 검증을 함께 하면 자기가 만든 흐름대로만 테스트했습니다. 기준은 모두 통과했다는데 실제로 게임을 켜 보면 깨져 있는 일이 반복됐습니다.</p>
+          </div>
+          <div class="story-card">
+            <span class="story-tag tag-result">RESULT</span>
+            <ul>
+              <li>기능 스펙 <b>100+ 개</b>를 이 흐름으로 진행</li>
+              <li>스펙·검증 기록이 git에 남아, 세션과 사람이 바뀌어도 <b>pull만 받으면 맥락이 이어짐</b></li>
+              <li>기획자도 같은 규약으로 스펙 작성부터 AI 구현까지 진행 (전체 스펙의 <b>약 20%</b>)</li>
+              <li>팀 커밋의 <b>절반 이상</b>을 담당</li>
+            </ul>
+          </div>
+          <div class="story-card card-learn">
+            <span class="story-tag tag-learn">LESSON</span>
+            <p>AI가 틀릴 수 있다고 전제하고<br>검증 단계를 따로 두는 것이<br>프롬프트를 다듬는 것보다 중요했습니다.</p>
+          </div>
+        </div>
+
+        <div class="story-card card-solve">
+          <span class="story-tag tag-solve">SOLUTION</span>
+          <h3>AI 세션마다 역할을 나눠 팀처럼 운영했습니다</h3>
+          <div class="solve-grid">
+            <div class="solve-item">
+              <h4>1. 스펙 주도 개발</h4>
+              <p>작업을 시작하기 전에 수용 기준을 적은 spec.md부터 만들고, 설계가 바뀌면 문서를 먼저 고치도록 팀 규칙으로 정했습니다. 커밋할 때마다 스펙과 진행 문서가 서로 맞는지 훅이 자동으로 검사합니다.</p>
+            </div>
+            <div class="solve-item">
+              <h4>2. 구현·검증 세션 분리</h4>
+              <p>작업 전에는 QA 세션이 수용 기준을 먼저 검토하고, 작업 후에는 구현에 참여하지 않은 QA 세션만 완료를 판정합니다. QA 세션은 Unity MCP로 게임을 직접 조작해 수치와 스크린샷으로 확인하고, 확인 과정은 다시 쓸 수 있는 테스트 코드로 남깁니다.</p>
+            </div>
+            <div class="solve-item">
+              <h4>3. 병렬 작업</h4>
+              <p>총괄(PD) 세션이 여러 워커 세션에 작업을 나눠 주고 결과를 병합하는 스크립트를 만들었습니다. 사전 검토를 거치지 않은 작업은 배분되지 않습니다.</p>
+            </div>
+            <div class="solve-item">
+              <h4>4. 도구에 상관없는 공유 규칙</h4>
+              <p>규칙 원본을 특정 AI 도구에 묶이지 않는 파일로 두고 Claude Code와 Cursor 설정에 연결했습니다. 팀원 누구나 저장소만 받으면 같은 방식으로 작업할 수 있습니다.</p>
+            </div>
+          </div>
+          <ul style="margin-top:auto; padding-top:0.5rem; border-top:1px solid var(--border);">
+            <li><b>자동으로 되는 것</b>: 세션을 열면 핵심 규칙을 불러오고 커밋 훅이 설정되어, 사람이 직접 커밋할 때도 문서 검사가 실행됩니다.</li>
+            <li><b>직접 챙기는 것</b>: 상황별 세부 규칙은 핵심 규칙의 안내를 보고 찾아 읽고, QA 검증은 세션을 따로 띄워 요청합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <span class="proj-slide-no">03 / 14</span>
+  </div>
+
+  <!-- ══════════════════════════════════
+       Slide 4 — 슈퍼센트 H2 (에이전트 스킬)
+       ══════════════════════════════════ -->
+
+  <div class="slide slide-project">
+    <div class="proj-topbar">
+      <span class="proj-topbar-no">04</span>
+      <span class="proj-topbar-company">슈퍼센트 · H2팀</span>
+      <span class="proj-topbar-sep">·</span>
+      <span class="proj-topbar-period">팀 AI 개발 체계 — 에이전트 스킬</span>
+      <span class="proj-topbar-spacer"></span>
+      <span class="proj-topbar-label">Company Project</span>
+    </div>
+    <div class="ai-body">
+      <div class="ai-head">
+        <h2>반복 업무는 에이전트 스킬로 만들어 팀과 공유합니다</h2>
+        <p>팀 저장소에 10여 개를 올려 함께 쓰고 있고, 그중 6개를 소개합니다.</p>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-card">
+          <span class="skill-no">01</span>
+          <h4>QA 판정</h4>
+          <p>스펙의 수용 기준을 테스트 항목으로 먼저 정리하고, 게임을 실행해 확인한 뒤 통과·실패 리포트를 남깁니다.</p>
+          <div class="skill-flow"><span class="flow-chip">수용 기준</span><span class="flow-arrow">→</span><span class="flow-chip">테스트 항목</span><span class="flow-arrow">→</span><span class="flow-chip">실행 확인</span><span class="flow-arrow">→</span><span class="flow-chip">판정 리포트</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-no">02</span>
+          <h4>플레이테스트</h4>
+          <p>Unity MCP로 게임을 조작해 수치와 스크린샷으로 확인하고, 확인 과정을 다시 쓸 수 있는 테스트 코드로 저장합니다.</p>
+          <div class="skill-flow"><span class="flow-chip">Unity MCP 조작</span><span class="flow-arrow">→</span><span class="flow-chip">수치·스크린샷</span><span class="flow-arrow">→</span><span class="flow-chip">테스트 코드 저장</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-no">03</span>
+          <h4>빌드 자동화</h4>
+          <p>사내 빌드 서버에 빌드를 요청하고, 끝나면 성공 여부를 확인해 변경 내역과 함께 팀 채널에 올립니다.</p>
+          <div class="skill-flow"><span class="flow-chip">빌드 요청</span><span class="flow-arrow">→</span><span class="flow-chip">완료 대기</span><span class="flow-arrow">→</span><span class="flow-chip">성공 여부 확인</span><span class="flow-arrow">→</span><span class="flow-chip">결과 공유</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-no">04</span>
+          <h4>기획 데이터 배포</h4>
+          <p>기획 데이터 시트를 수정해 새 버전으로 배포하고, Unity에 받아 제대로 반영됐는지 비교합니다.</p>
+          <div class="skill-flow"><span class="flow-chip">시트 수정</span><span class="flow-arrow">→</span><span class="flow-chip">버전 배포</span><span class="flow-arrow">→</span><span class="flow-chip">Unity 반영</span><span class="flow-arrow">→</span><span class="flow-chip">결과 비교</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-no">05</span>
+          <h4>Figma → Unity UI</h4>
+          <p>Figma로 화면을 그리거나 받은 시안을 Unity UI 프리팹으로 옮기고 검수합니다.</p>
+          <div class="skill-flow"><span class="flow-chip">Figma 설계·시안</span><span class="flow-arrow">→</span><span class="flow-chip">UI 프리팹 변환</span><span class="flow-arrow">→</span><span class="flow-chip">검수</span></div>
+        </div>
+        <div class="skill-card">
+          <span class="skill-no">06</span>
+          <h4>에러 알림 분석</h4>
+          <p>에러 알림이 오면 콜스택을 따라 코드를 추적해 원인·결과·대응을 정리한 답글 초안을 쓰고, 확인을 받은 뒤 올립니다.</p>
+          <div class="skill-flow"><span class="flow-chip">콜스택 추적</span><span class="flow-arrow">→</span><span class="flow-chip">답글 초안</span><span class="flow-arrow">→</span><span class="flow-chip">확인 후 게시</span></div>
+        </div>
+      </div>
+    </div>
+    <span class="proj-slide-no">04 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -83,7 +328,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar">
-      <span class="proj-topbar-no">02</span>
+      <span class="proj-topbar-no">05</span>
       <span class="proj-topbar-company">위메이드넥스트 · ProjectT팀</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">2025.09 ~ 2026.07 · 판교</span>
@@ -120,7 +365,7 @@
         </div>
       </div>
     </div>
-    <span class="proj-slide-no">02 / 11</span>
+    <span class="proj-slide-no">05 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -129,7 +374,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar">
-      <span class="proj-topbar-no">03</span>
+      <span class="proj-topbar-no">06</span>
       <span class="proj-topbar-company">위메이드넥스트 · ProjectT팀</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">ProjectT — 주요 기여 상세</span>
@@ -205,7 +450,7 @@
 
       </div>
     </div>
-    <span class="proj-slide-no">03 / 11</span>
+    <span class="proj-slide-no">06 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -214,7 +459,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar">
-      <span class="proj-topbar-no">04</span>
+      <span class="proj-topbar-no">07</span>
       <span class="proj-topbar-company">엔픽셀 → 파이드픽셀즈</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">2023.01 ~ 2025.08 · 역삼</span>
@@ -265,7 +510,7 @@
         </div>
       </div>
     </div>
-    <span class="proj-slide-no">04 / 11</span>
+    <span class="proj-slide-no">07 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -274,7 +519,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar">
-      <span class="proj-topbar-no">05</span>
+      <span class="proj-topbar-no">08</span>
       <span class="proj-topbar-company">엔픽셀 → 파이드픽셀즈</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">그랑사가 키우기 — 주요 기여 상세</span>
@@ -351,7 +596,7 @@
 
       </div>
     </div>
-    <span class="proj-slide-no">05 / 11</span>
+    <span class="proj-slide-no">08 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -361,7 +606,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar">
-      <span class="proj-topbar-no">06</span>
+      <span class="proj-topbar-no">09</span>
       <span class="proj-topbar-company">팀 프로젝트 · 팀장</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">2021.09 ~ 2021.12</span>
@@ -400,7 +645,7 @@
         </div>
       </div>
     </div>
-    <span class="proj-slide-no">06 / 11</span>
+    <span class="proj-slide-no">09 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -409,7 +654,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar">
-      <span class="proj-topbar-no">07</span>
+      <span class="proj-topbar-no">10</span>
       <span class="proj-topbar-company">팀 프로젝트 · 팀장</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">Rule Mate — 주요 기여 상세</span>
@@ -468,7 +713,7 @@
 
       </div>
     </div>
-    <span class="proj-slide-no">07 / 11</span>
+    <span class="proj-slide-no">10 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -477,7 +722,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar topbar-personal">
-      <span class="proj-topbar-no">08</span>
+      <span class="proj-topbar-no">11</span>
       <span class="proj-topbar-company">개인 프로젝트</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">2021.04 ~ 2021.12</span>
@@ -512,7 +757,7 @@
         </div>
       </div>
     </div>
-    <span class="proj-slide-no">08 / 11</span>
+    <span class="proj-slide-no">11 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -521,7 +766,7 @@
 
   <div class="slide slide-project">
     <div class="proj-topbar topbar-personal">
-      <span class="proj-topbar-no">09</span>
+      <span class="proj-topbar-no">12</span>
       <span class="proj-topbar-company">개인 프로젝트</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">자동차 물리 시뮬레이션 — 주요 기여 상세</span>
@@ -590,7 +835,7 @@
 
       </div>
     </div>
-    <span class="proj-slide-no">09 / 11</span>
+    <span class="proj-slide-no">12 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -598,7 +843,7 @@
        ══════════════════════════════════ -->
   <div class="slide slide-project">
     <div class="proj-topbar topbar-personal">
-      <span class="proj-topbar-no">10</span>
+      <span class="proj-topbar-no">13</span>
       <span class="proj-topbar-company">개인 프로젝트</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">2026.03 ~ 현재</span>
@@ -662,7 +907,7 @@
         </div>
       </div>
     </div>
-    <span class="proj-slide-no">10 / 11</span>
+    <span class="proj-slide-no">13 / 14</span>
   </div>
 
   <!-- ══════════════════════════════════
@@ -670,7 +915,7 @@
        ══════════════════════════════════ -->
   <div class="slide slide-project">
     <div class="proj-topbar topbar-personal">
-      <span class="proj-topbar-no">11</span>
+      <span class="proj-topbar-no">14</span>
       <span class="proj-topbar-company">개인 프로젝트</span>
       <span class="proj-topbar-sep">·</span>
       <span class="proj-topbar-period">2026.03</span>
@@ -736,7 +981,7 @@
         </div>
       </div>
     </div>
-    <span class="proj-slide-no">11 / 11</span>
+    <span class="proj-slide-no">14 / 14</span>
   </div>
 
 </div><!-- /slides-wrap -->
