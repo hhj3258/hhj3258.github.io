@@ -278,6 +278,7 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
 }
 .r-exp-logo img { width: 78%; height: 78%; object-fit: contain; }
+.r-logo-sc img { border-radius: 22%; }
 
 .r-exp-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 
